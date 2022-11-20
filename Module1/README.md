@@ -23,4 +23,4 @@
 Также копия XLSX лежит в репозитории, но надо иметь в виду, что при открытии файла через ms excel, форматы могут поехать.
 
 Скрин дэшборда:
-![](https://romankalitenko.github.io/DE101/Module1/DE101_Module1_Lab1.1/DASHBOARD_1.html)
+![](https://romankalitenko.github.io/DE101//Module1/DASHBOARD_1.svg)
