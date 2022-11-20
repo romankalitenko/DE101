@@ -13,9 +13,13 @@
   - git commit -m ‘added new files’
   - git push
 
+Позднее по мере описания этой страницы, я начал использовать Atom с надстройками Markdown Preview и Git-Plus для редактирования и коммитов.
+
 ## Архитектура Аналитического Решения
 
 Пример архитектуры взял из головы - тут понимаю, что знаний того, как устроен Source Layer у меня нет. Самое далекое, чего касался при работе - доступ в Postgres и прямые запросы данных, то есть Business Layer.
+
+Диаграмма нарисована в Miro - мне UX нравится больше, чем draw.io.
 
 ![DataDiagram](data_diagram.png)
 
@@ -25,9 +29,9 @@
 
 Оригинал лежит [здесь](https://docs.google.com/spreadsheets/d/1atxrtPlPwRZNIWuIy2sJmMBWJQiI2y0LNckrQWh70vQ/edit?usp=sharing).
 
-[html дэшборда](https://romankalitenko.github.io/DE101/Module1/DE101_Module1_Lab1.1/DASHBOARD_1.html)
+Получилось выложить дэшборд в виде отдельного [html](https://romankalitenko.github.io/DE101/Module1/DE101_Module1_Lab1.1/DASHBOARD_1.html), но в сети не нашел примеров как можно эту страничку приложить как интерактивную картинку в README, оставил просто ссылкой.
 
 
-Также копия XLSX лежит в репозитории, но надо иметь в виду, что при открытии файла через ms excel, форматы могут поехать.
+Также [копия XLSX](DE101_Module1_Lab1.1.xlsx) лежит в репозитории, но надо иметь в виду, что при открытии файла через ms excel, форматы могут поехать.
 
 ![](DASHBOARD_1.png)
