@@ -59,7 +59,7 @@ create table dw.shipping
 );
 
 --deleting rows
-truncate table dw.shipping
+truncate table dw.shipping;
 
 --generating data
 insert into dw.shipping
@@ -84,7 +84,7 @@ create table dw.users
 );
 
 --deleting rows
-truncate table dw.users
+truncate table dw.users;
 
 --generating data
 insert into dw.users
@@ -113,7 +113,7 @@ create table dw.products
 );
 
 --deleting rows
-truncate table dw.products
+truncate table dw.products;
 
 --generating data
 insert into dw.products
@@ -137,7 +137,7 @@ create table dw.discounts
 );
 
 --deleting rows
-truncate table dw.discounts
+truncate table dw.discounts;
 
 --generating data
 insert into dw.discounts
@@ -168,7 +168,7 @@ create table dw.orders
 );
 
 --deleting rows
-truncate table dw.orders
+truncate table dw.orders;
 
 --generating data
 insert into dw.orders
@@ -210,7 +210,7 @@ create table dw.orders_items
 );
 
 --deleting rows
-truncate table dw.orders_items
+truncate table dw.orders_items;
 
 --generating data
 insert into dw.orders_items
@@ -240,3 +240,37 @@ inner join dw.discounts d on d.discount_id = oi.discount_id
 inner join dw.geo g on g.geo_id = o.geo_id 
 inner join dw.shipping s on s.ship_id = o.ship_id 
 inner join dw.users u on u.user_id = o.user_id ; --9994 rows, correct
+
+
+
+
+---RETURNS
+
+--creating table
+drop table if exists dw.item_status;
+create table dw.item_status
+(
+ item_id	integer not null primary key,
+ returned	boolean not null
+);
+
+--deleting rows
+truncate table dw.item_status;
+
+--generating data
+insert into dw.item_status
+select distinct 
+	oi.item_id , ret.status
+from dw.orders_items oi 
+inner join dw.orders o2 on oi.order_num = o2.order_num 
+inner join 
+(select distinct 
+	o.order_id , case when r.returned = 'Yes' then true else false end as status
+	from 
+	orders o 
+	left join "returns" r on r.order_id = o.order_id) ret on ret.order_id = o2.order_id
+;
+
+--checking
+select * from dw.item_status;
+
