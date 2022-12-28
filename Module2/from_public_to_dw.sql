@@ -189,7 +189,7 @@ inner join dw.geo g on o.country = g.country and o.city = g.city and o.state = g
 --checking
 select count(*) from (select distinct order_id from orders) o;
 select count(*) from dw.orders;
-
+select * from dw.orders o ;
 
 
 
@@ -274,3 +274,9 @@ inner join
 --checking
 select * from dw.item_status;
 
+
+select * from dw.discounts d ;
+select * from dw.geo g ;
+select * from dw.products p ;
+select * from dw.shipping s ;
+select * from dw.users u ;
